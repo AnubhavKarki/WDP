@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/WDP2024Assignment2.props" />
+</Project>

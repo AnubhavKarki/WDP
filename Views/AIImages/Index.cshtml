@@ -1,0 +1,65 @@
+@model IEnumerable<WDP2024Assignment2.Models.AIImage>
+
+@{
+    ViewData["Title"] = "List of AI Images";
+}
+
+<div class="image-gallery">
+    <div class="center-content">
+        <h1 class="heading">List of AI Images</h1>
+        <p>
+            <a class="link-style" asp-action="Create">Click here to upload a new AI Image</a>
+        </p>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="img-block" id="image-@item.Id"> <!-- Added ID for anchoring -->
+            <div class="image">
+                <img src="~/uploads/@item.Filename" alt="@item.Prompt" />
+            </div>
+            <div class="image-details">
+                <h3>@item.ImageGenerator</h3>
+                <p>@item.Prompt</p>
+                <div class="buttons">
+                    @if (User.IsInRole("admin")) // Admin role
+                    {
+                        <form asp-action="Like" asp-route-id="@item.Id" method="post" onsubmit="return likeAndAnchor(@item.Id);">
+                            <button type="submit" class="btn btn-primary">Like (@item.Like)</button>
+                            <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </form>
+                    }
+                    else if (User.IsInRole("Member")) // Member role
+                    {
+                        <form asp-action="Like" asp-route-id="@item.Id" method="post" onsubmit="return likeAndAnchor(@item.Id);">
+                            <button type="submit" class="btn btn-primary">Like (@item.Like)</button>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function likeAndAnchor(imageId) {
+            // Save the imageId in local storage
+            localStorage.setItem("likedImageId", imageId);
+            return true; // Allow the form to submit
+        }
+
+        // Check local storage for the liked image ID and scroll to it
+        document.addEventListener("DOMContentLoaded", function () {
+            var likedImageId = localStorage.getItem("likedImageId");
+            if (likedImageId) {
+                var element = document.getElementById("image-" + likedImageId);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" }); // Scroll to the liked image
+                }
+                localStorage.removeItem("likedImageId"); // Clear the stored ID
+            }
+        });
+    </script>
+}

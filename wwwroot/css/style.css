@@ -1,0 +1,716 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.video-background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1, 1, 1, 0.4);
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.navbar {
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+}
+
+.content h1 {
+  font-family: "Anton", sans-serif;
+  background-image: linear-gradient(
+    to right,
+    brown,
+    brown,
+    yellow,
+    white,
+    yellow,
+    brown,
+    brown
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: brown;
+  padding: 9vw 2vw 0 2vw;
+  font-size: 7vw;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2vw;
+  text-align: center;
+  color: white;
+  margin-top: 1rem;
+}
+
+.image-background-container {
+  margin-top: 0;
+  padding-top: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  overflow: hidden;
+  background-image: url("/images/bg2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 75vh;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.info-block {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 1rem;
+  width: 50%;
+  margin-left: 20px;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.info-block a {
+  display: inline-block;
+  color: white;
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.info-block a:hover {
+  background-color: white;
+  color: rgb(70, 26, 26);
+}
+
+.info-block a:focus {
+  outline: none;
+  border-color: rgb(70, 26, 26);
+}
+
+.info-block h3 {
+  font-family: "Anton", sans-serif;
+  color: #f8bd08;
+  font-size: 4vw;
+  text-shadow: 2px 2px 0px navy, 2px 2px 4px white;
+}
+
+.info-block p {
+  font-family: "Lato", sans-serif;
+  color: white;
+  font-size: 1.5vw;
+}
+
+.image-container {
+  display: flex;
+  gap: 20px;
+}
+
+.image-link {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-effect {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hover-effect img {
+  display: block;
+  width: 100%;
+  transition: opacity 2s ease;
+}
+
+.hover-effect:hover img {
+  opacity: 0.9;
+}
+
+.hover-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(70, 26, 26);
+  color: white;
+  font: normal 1.2vw Arial;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.hover-effect:hover .hover-text {
+  opacity: 1;
+}
+
+/* Upload AI images */
+.upload-section {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-heading {
+  font-family: "Anton", sans-serif;
+  color: #f8bd08;
+  font-size: 4vw;
+  text-shadow: 2px 2px 0px navy, 2px 2px 4px white;
+}
+
+.upload-text {
+  font-family: "Lato", sans-serif;
+  color: white;
+  font-size: 1.5vw;
+}
+
+.upload-link {
+  color: #f8bd08;
+  text-decoration: none;
+  transition: color 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.upload-link:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.link-style {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.link-style:hover {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  transform: scale(1.05);
+}
+
+.up_ai_img_center {
+  flex-direction: column;
+}
+
+.upload-ai-section {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact Page: */
+
+.contact-page {
+  background-image: url("/images/bg1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100%;
+  padding: 10vw 0;
+}
+
+.heading {
+  font-family: "Anton", sans-serif;
+  background-image: linear-gradient(
+    to right,
+    brown,
+    brown,
+    yellow,
+    white,
+    yellow,
+    brown,
+    brown
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0vw 2vw 0vw 2vw;
+  text-align: center;
+  font-size: 8vw;
+}
+
+.box {
+  background: #171789bf;
+  color: #f7f6b7;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  height: 100%;
+  box-shadow: 10px 10px 0px 0px #f8f6b0;
+  border: 1px solid white;
+}
+
+.box h2 {
+  font-family: "Niconne", cursive;
+  color: yellow;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 0px navy, 2px 2px 2px white;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.55rem;
+}
+
+.box p {
+  font-family: Arial, sans-serif;
+  color: yellow;
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .box {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .box {
+    border: none;
+  }
+}
+
+/* Footer CSS */
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 20px;
+  background-color: #343a40;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-icon {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s, transform 0.3s;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.footer-icon:hover {
+  color: #f8bd08;
+  transform: scale(1.1);
+}
+
+/* Create.cshtml */
+
+.create-h3 {
+  font-family: "Anton", sans-serif;
+  color: #f8bd08;
+  font-size: 4vw;
+  text-shadow: 2px 2px 0px navy, 2px 2px 4px white;
+  margin-top: 40px;
+}
+
+.create-page {
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  color: white;
+}
+
+
+.form-container {
+  display: flex; 
+  justify-content: space-between;
+  align-items: flex-start; 
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+form {
+  width: 100%;
+}
+
+.image-preview {
+  width: 35%;
+}
+
+.image-preview img {
+  max-width: 100%;
+  min-height: 400px;
+  border: 1px solid #ccc;
+}
+
+
+.btl-link {
+  color: white;
+  text-decoration: none;
+}
+
+
+.btl-link:hover {
+  color: grey;
+}
+
+.large-input {
+  width: 100%; 
+}
+
+.textbox-height {
+  height: 20vh;
+}
+
+.image-preview {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-preview img {
+  max-width: 300px;
+  max-height: 300px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+}
+
+/* Delete.cshtml */
+/* Main Heading */
+#delete-main-heading {
+  font-family: 'Anton', sans-serif;
+  text-shadow: 4px 4px 0px navy, 4px 4px 8px white;
+  padding: 3vw 0vw 2vw 0vw;
+  text-align: center;
+  color: #f8bd08;
+  font-size: 4vw;
+}
+
+/* "Are you sure..." Text */
+#are-you-sure-text {
+  font-family: 'Anton', sans-serif;
+  text-shadow: 2px 2px 0px navy, 2px 2px 4px white;
+  color: yellow;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* Background Styling */
+#delete-page-container {
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form Container */
+#delete-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form Text Color */
+#delete-form-container .row dt, 
+#delete-form-container .row dd {
+  color: white;
+}
+
+/* Form Styles */
+#delete-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+/* Details.cshtml */
+/* Details Page Main Heading */
+#details-main-heading {
+  font-family: 'Anton', sans-serif;
+  text-shadow: 4px 4px 0px navy, 4px 4px 8px white;
+  padding: 3vw 0vw 2vw 0vw;
+  text-align: center;
+  color: #f8bd08;
+  font-size: 4vw;
+}
+
+/* Details Page Background */
+#details-page-container {
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  padding: 20px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navigation Styling */
+#details-navigation {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+
+/* Uploaded Images: */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust spacing between images */
+}
+
+.image-block {
+  position: relative;
+  cursor: pointer; /* Change cursor to pointer */
+  overflow: hidden; /* Prevent overflow */
+  transition: transform 0.3s; /* Transition for hover effect */
+}
+
+.image-block:hover {
+  transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.fade-image {
+  opacity: 0; /* Start with the image invisible */
+  transition: opacity 2s; /* Fade in over 2 seconds */
+}
+
+.image-block:hover .fade-image {
+  opacity: 1; /* Fade in the image on hover */
+}
+
+figcaption {
+  text-align: center; /* Center align the caption */
+  margin-top: 5px; /* Space between image and caption */
+}
+
+/* AI Images (Index.cshtml) */
+
+.image-gallery {
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-content {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.link-style {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.link-style:hover {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  transform: scale(1.05);
+}
+
+.img-block {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: -2.0rem;
+}
+
+.img-block:nth-child(odd) {
+  background: linear-gradient(to bottom, #ff9933, #ffe6cc, white, white);
+  flex-direction: row;
+}
+
+.img-block:nth-child(even) {
+  background: linear-gradient(to bottom, #3333ff, #ccccff, white, white);
+  flex-direction: row-reverse;
+  padding-left: 20px;
+}
+
+.image {
+  height: 20vw;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.image-details {
+  flex: 1;
+  width: 70%;
+}
+
+.image-details h3 {
+  color: navy;
+  font-family: "Oxygen", sans-serif;
+  text-shadow: 2px 2px 0px white, 2px 2px 4px navy;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.image-details p {
+  font-family: Arial, sans-serif;
+  color: black;
+  font-size: 1vw;
+}
+
+.buttons .btn {
+  margin-right: 10px;
+}
+
+.image-gallery h1,
+.image-gallery p {
+  text-align: center;
+}
+
+/* Images list for Home/Index.cshtml */
+.i-l {
+  text-decoration: none;
+}
+
+.i-w {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.i-w img {
+  display: block;
+  width: 40vw;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.i-w:hover img {
+  opacity: 1;
+}
+
+.white-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  transition: opacity 0.5s ease; /* Smooth transition for overlay */
+}
+
+.ol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.o-t {
+  color: blue;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 10px;
+  transition: opacity 0.5s ease; /* Smooth transition for text */
+}
+
+.i-w:hover .white-overlay {
+  opacity: 0;
+}
+
+.i-w:hover .o-t {
+  opacity: 0; /* Fade out text on hover */
+}
+
+.m-t-v {
+  margin-top: -500px;
+}

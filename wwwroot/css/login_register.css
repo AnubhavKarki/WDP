@@ -1,0 +1,47 @@
+body {
+    background-color: #1e1e1e; 
+    color: white; 
+}
+
+h1 {
+    color: white; 
+    margin-left: 10px;
+    margin-bottom: 20px; 
+}
+
+form {
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+}
+
+h3 {
+    color: #FFD700; 
+    margin-top: 20px; 
+}
+
+h3::after {
+    content: ''; 
+    display: block; 
+    height: 2px; 
+    background-color: #FFFACD; 
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+}
+
+a {
+    color: grey; 
+    text-decoration: none; 
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+
+.text-danger {
+    color: #ff4d4d; 
+}
+
+p {
+    margin: 10px 0; 
+}

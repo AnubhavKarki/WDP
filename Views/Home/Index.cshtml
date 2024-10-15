@@ -1,0 +1,160 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Video Background Section -->
+<div class="container-fluid p-0">
+    <div class="video-background">
+        <video autoplay loop muted preload="auto" class="">
+            <source src="~/videos/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Generative Artificial Intelligence</h1>
+            <p>Generative artificial intelligence is artificial intelligence capable of generating text, images,
+                videos, or
+                other data using generative models, often in response to prompts. Generative AI models learn the
+                patterns and
+                structure of their input training data and then generate new data that has similar characteristics.
+            </p>
+            <p><em>Wikipedia</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- Part below background video (chatgpt and gemini) -->
+<div class="container-fluid p-0">
+    <div class="image-background-container">
+        <div class="info-block">
+            <h3>AI Chatbots</h3>
+            <p>Artificial intelligence (AI) chatbots are apps or interfaces that can carry on human-like
+                conversation
+                using natural language understanding (NLU) or natural language processing (NLP) and machine learning
+                (ML).</p>
+            <p><a href="https://cloud.google.com/use-cases/ai-chatbot">Read more</a></p>
+        </div>
+        <div class="image-container">
+            <a href="https://gemini.google.com/app" class="image-link">
+                <div class="hover-effect">
+                    <img src="~/images/gemini.jpg" alt="Gemini" class="img-fluid">
+                    <div class="hover-text">Gemini, formerly known as Bard, is a generative artificial intelligence
+                        chatbot
+                        developed by Google.<br>Wikipedia</div>
+                </div>
+            </a>
+            <a href="https://openai.com/index/chatgpt/" class="image-link">
+                <div class="hover-effect">
+                    <img src="~/images/chatgpt.jpg" alt="ChatGPT" class="img-fluid">
+                    <div class="hover-text">ChatGPT is a chatbot and virtual assistant developed by OpenAI and
+                        launched on
+                        November 30, 2022.<br>Wikipedia</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Part below chatgpt and gemini (pixlr and DALL-E 2) -->
+<div class="container-fluid p-0">
+    <div class="image-background-container">
+        <div class="image-container">
+            <a href="https://pixlr.com/image-generator/" class="image-link hover-effect">
+                <img src="~/images/pixlr.jpg" alt="Pixlr Image" class="img-fluid">
+                <div class="hover-text">Pixlr is a group of AI-powered SaaS creative tools including Pixlr.com,
+                    Designs.ai, and Vectr.com.<br>Wikipedia</div>
+            </a>
+            <a href="https://openai.com/index/dall-e-3/" class="image-link hover-effect">
+                <img src="~/images/dalle.jpg" alt="DALL-E Image" class="img-fluid">
+                <div class="hover-text">DALL·E, DALL·E 2, and DALL·E 3 are text-to-image models developed by
+                    OpenAI.<br>Wikipedia</div>
+            </a>
+        </div>
+        <div class="info-block">
+            <h3>AI Image Generator</h3>
+            <p>AI Image Generator is an innovative tool using advanced AI techniques to generate an image from a
+                text prompt. Just write what you want to generate, and our AI will create it.</p>
+            <p><a href="https://pixlr.com/image-generator/">Read more</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Part below pixlr and DALL-E 2 (IBM and Amazon) -->
+<div class="container-fluid p-0">
+    <div class="image-background-container">
+        <div class="info-block">
+            <h3>AI Companies</h3>
+            <p>Top Generative AI Companies: Microsoft, OpenAI, Google, Amazon, Anthropic, IBM, Meta, xAI, Stability,
+                and Adobe.</p>
+            <p><a href="https://www.vktr.com/ai-market/10-top-generative-ai-companies/">Read more</a></p>
+        </div>
+
+        <div class="image-container">
+            <a href="https://www.ibm.com/au-en" class="image-link">
+                <div class="hover-effect">
+                    <img src="~/images/ibm.jpg" alt="IBM Image" class="img-fluid">
+                    <div class="hover-text">IBM is the largest industrial research organization in the world, with
+                        19 research facilities across a dozen countries.<br>Wikipedia</div>
+                </div>
+            </a>
+            <a href="https://aws.amazon.com/q/?nc2=h_ql_prod_l1_q" class="image-link">
+                <div class="hover-effect">
+                    <img src="~/images/amazon.jpg" alt="Amazon Image" class="img-fluid">
+                    <div class="hover-text">The most capable generative AI–powered assistant for accelerating
+                        software development and leveraging companies' internal data.<br>Amazon Q</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Upload AI Images Section -->
+<div class="container-fluid p-0">
+    <div class="image-background-container up_ai_img_center">
+        <div class="upload-ai-section d-flex flex-column align-items-center text-center">
+            <h3 class="upload-heading">Upload AI Images</h3>
+            <p class="upload-text">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <i><a href="@Url.Action("Create", "AIImages")" class="link-style">Click here to upload a new AI
+                            image</a>.</i>
+                }
+                else
+                {
+                    <i>Please <a asp-area="Identity" asp-page="/Account/Login" class="link-style">login</a> or
+                        <a asp-area="Identity" asp-page="/Account/Register" class="link-style">register</a> to upload
+                        your AI images.
+                    </i>
+                }
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Display Uploaded AI Images -->
+<div class="container-fluid p-0 m-t-v">
+    <div class="image-background-container">
+        <div class="row"> 
+            @foreach (var image in Model)
+            {
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="@Url.Action("Index", "AIImages")#image-@image.Id" class="i-l"> <!-- Use anchor link -->
+                        <div class="i-w">
+                            <img src="~/uploads/@image.Filename" alt="@image.Prompt" class="img-fluid" />
+                            <div class="white-overlay"></div>
+                            <div class="ol">
+                                <div class="o-t">@image.Prompt</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@* Javascript *@
+<script src="~/js/site.js"></script>
