@@ -13,6 +13,7 @@ main {
   flex: 1;
 }
 
+/* Home/Index.cshtml */
 .video-background {
   position: relative;
   height: 100vh;
@@ -44,6 +45,7 @@ main {
   padding: 0 2rem;
 }
 
+/* Navbar CSS (below) */
 .navbar {
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.8);
@@ -80,7 +82,9 @@ main {
   text-align: center;
   color: white;
   margin-top: 1rem;
+  padding: 0 20vh;
 }
+
 
 .image-background-container {
   margin-top: 0;
@@ -95,7 +99,8 @@ main {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  height: 75vh;
+  height: 100%;
+  padding-top: 200px;
 }
 
 .fade-in {
@@ -257,6 +262,81 @@ main {
   z-index: 2;
 }
 
+/* Responsive design */
+@media (max-width: 768px) {
+  .image-background-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-block {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .image-container {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .info-block h3 {
+    font-size: 6vw;
+  }
+
+  .info-block p {
+    font-size: 3vw;
+  }
+  .upload-heading {
+    font-size: 6vw;
+  }
+
+  .upload-text {
+    font-size: 3vw;
+  }
+
+  .content .rs-h1 {
+    font-size: 7vw;
+  }
+
+  .content .rs-p {
+    font-size: 3vw;
+  }
+  .content p{
+    padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+  .info-block h3 {
+    font-size: 8vw;
+  }
+
+  .info-block p {
+    font-size: 4vw;
+  }
+
+  .upload-heading {
+    font-size: 8vw;
+  }
+
+  .upload-text {
+    font-size: 4vw;
+  }
+
+  .content .rs-h1 {
+    font-size: 7vw;
+  }
+
+  .content .rs-p {
+    font-size: 4vw;
+  }
+
+  .content p {
+    padding: 0;
+    }
+}
+
 /* Contact Page: */
 
 .contact-page {
@@ -317,15 +397,38 @@ main {
   .box {
     box-shadow: none;
   }
+
+  .contact-page h1 {
+    font-size: 6vw;
+  }
+
+  .contact-page h2 {
+    font-size: 5vw;
+  }
+
+  .contact-page p {
+    font-size: 2vw;
+  }
 }
 
 @media (max-width: 576px) {
   .box {
     border: none;
   }
+
+  .contact-page h1 {
+    font-size: 8vw;
+  }
+
+  .contact-page h2 {
+    font-size: 6vw;
+  }
+
+  .contact-page p {
+    font-size: 3vw;
+  }
 }
 
-/* Footer CSS */
 .footer {
   position: relative;
   bottom: 0;
@@ -355,8 +458,52 @@ main {
   transform: scale(1.1);
 }
 
-/* Create.cshtml */
+/* Apply brand colors to social media icons */
+.footer-icons a:nth-child(4) .fa-envelope {
+  color: #ea4335;
+}
 
+.footer-icons a:nth-child(5) .fa-youtube {
+  color: #ff0000;
+}
+
+.footer-icons a:nth-child(6) .fa-twitter {
+  color: #1da1f2;
+}
+
+.footer-icons a:nth-child(7) .fa-facebook {
+  color: #3b5998;
+}
+
+.footer-icons a:nth-child(8) .fa-linkedin {
+  color: #0077b5;
+}
+
+/* Media queries for responsiveness */
+
+/* For tablet devices */
+@media (max-width: 768px) {
+  .footer-icons {
+    flex-wrap: wrap;
+  }
+  .footer-icon {
+    font-size: 1.2rem;
+    margin: 10px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  .footer-icons {
+    flex-direction: column;
+  }
+  .footer-icon {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+}
+
+/* Create.cshtml */
 .create-h3 {
   font-family: "Anton", sans-serif;
   color: #f8bd08;
@@ -366,10 +513,10 @@ main {
 }
 
 .create-page {
-  background-image: url('/images/bg2.jpg');
+  background-image: url("/images/bg2.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -377,11 +524,10 @@ main {
   color: white;
 }
 
-
 .form-container {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
-  align-items: flex-start; 
+  align-items: flex-start;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -402,19 +548,17 @@ form {
   border: 1px solid #ccc;
 }
 
-
 .btl-link {
   color: white;
   text-decoration: none;
 }
-
 
 .btl-link:hover {
   color: grey;
 }
 
 .large-input {
-  width: 100%; 
+  width: 100%;
 }
 
 .textbox-height {
@@ -434,66 +578,188 @@ form {
   margin-left: 20px;
 }
 
+.image-preview #selectedImage {
+  display: block;
+}
+
+/* Edit.cshtml */
+#currentImage {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+#selectedImage_ {
+  display: none;
+}
+
+/* Responsive for Edit.cshtml */
+@media (max-width: 861px) and (min-width: 768px) {
+  .form-container {
+    justify-content: space-between;
+  }
+
+  .form-container form {
+    width: 60%; 
+  }
+
+  .image-preview {
+    width: 40%; 
+  }
+
+  .image-preview img {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .textbox-height {
+    height: 15vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .image-preview img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .create-h3 {
+    font-size: 6vw;
+  }
+
+  .textbox-height {
+    height: 15vh;
+  }
+}
+
+/* Phone View: Further stack and center everything */
+@media (max-width: 576px) {
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .image-preview img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .create-h3 {
+    font-size: 7vw;
+  }
+
+  .textbox-height {
+    height: 12vh;
+  }
+}
+
 /* Delete.cshtml */
 /* Main Heading */
-#delete-main-heading {
-  font-family: 'Anton', sans-serif;
+.delete-main-heading {
+  font-family: "Anton", sans-serif;
   text-shadow: 4px 4px 0px navy, 4px 4px 8px white;
-  padding: 3vw 0vw 2vw 0vw;
-  text-align: center;
   color: #f8bd08;
   font-size: 4vw;
+  margin-top: 50px;
 }
 
 /* "Are you sure..." Text */
-#are-you-sure-text {
-  font-family: 'Anton', sans-serif;
+.are-you-sure-text {
+  font-family: "Anton", sans-serif;
   text-shadow: 2px 2px 0px navy, 2px 2px 4px white;
   color: yellow;
   font-size: 2em;
-  text-align: center;
+  margin-left: 10px;
+}
+
+/* AIImage Text */
+.aiimage-text {
+  text-align: left;
+  margin-left: 10px;
+}
+
+/* Yellow Horizontal Line */
+.yl-hr {
+  border: none;
+  border-top: 4px solid #ffff00;
+  width: 80%;
+  margin-bottom: 10px;
+  opacity: 1;
 }
 
 /* Background Styling */
-#delete-page-container {
-  background-image: url('/images/bg2.jpg');
+.delete-page-container {
+  background-image: url("/images/bg2.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: white;
-  text-align: center;
-  padding: 20px;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 /* Form Container */
-#delete-form-container {
+.delete-form-container {
   max-width: 800px;
-  margin: 0 auto;
 }
 
 /* Form Text Color */
-#delete-form-container .row dt, 
-#delete-form-container .row dd {
+.delete-form-container .row dt,
+.delete-form-container .row dd {
   color: white;
 }
 
 /* Form Styles */
-#delete-form {
+.delete-form {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Ensures buttons are aligned left */
   margin-top: 20px;
 }
 
+.delete-form .gap-span {
+  margin: 0 5px;
+}
+
+/* Brighter text for all content */
+.delete-form-container .row dt,
+.delete-form-container .row dd {
+  color: #f9f9f9; /* Brighter text color */
+}
+
+/* HR below AIImage Text */
+.delete-form-container hr {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  width: 100%;
+  opacity: 1; /* Ensure it's fully opaque */
+}
 
 /* Details.cshtml */
 /* Details Page Main Heading */
 #details-main-heading {
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
   text-shadow: 4px 4px 0px navy, 4px 4px 8px white;
   padding: 3vw 0vw 2vw 0vw;
   text-align: center;
@@ -503,7 +769,7 @@ form {
 
 /* Details Page Background */
 #details-page-container {
-  background-image: url('/images/bg2.jpg');
+  background-image: url("/images/bg2.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -526,38 +792,38 @@ form {
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust spacing between images */
+  gap: 20px;
 }
 
 .image-block {
   position: relative;
-  cursor: pointer; /* Change cursor to pointer */
-  overflow: hidden; /* Prevent overflow */
-  transition: transform 0.3s; /* Transition for hover effect */
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s;
 }
 
 .image-block:hover {
-  transform: scale(1.05); /* Scale up slightly on hover */
+  transform: scale(1.05);
 }
 
 .fade-image {
-  opacity: 0; /* Start with the image invisible */
-  transition: opacity 2s; /* Fade in over 2 seconds */
+  opacity: 0;
+  transition: opacity 2s;
 }
 
 .image-block:hover .fade-image {
-  opacity: 1; /* Fade in the image on hover */
+  opacity: 1;
 }
 
 figcaption {
-  text-align: center; /* Center align the caption */
-  margin-top: 5px; /* Space between image and caption */
+  text-align: center;
+  margin-top: 5px;
 }
 
 /* AI Images (Index.cshtml) */
 
 .image-gallery {
-  background-image: url('/images/bg2.jpg');
+  background-image: url("/images/bg1.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100%;
@@ -565,6 +831,27 @@ figcaption {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.heading_ {
+  font-family: "Anton", sans-serif;
+  background-image: linear-gradient(
+    to right,
+    brown,
+    yellow,
+    yellow,
+    yellow,
+    white,
+    yellow,
+    yellow,
+    yellow,
+    brown
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0vw 2vw 0vw 2vw;
+  text-align: center;
+  font-size: 8vw;
 }
 
 .center-content {
@@ -589,15 +876,15 @@ figcaption {
   align-items: center;
   width: 100%;
   height: 100%;
-  margin-bottom: -2.0rem;
+  margin-bottom: -2rem;
 }
 
-.img-block:nth-child(odd) {
+.img-block:nth-child(even) {
   background: linear-gradient(to bottom, #ff9933, #ffe6cc, white, white);
   flex-direction: row;
 }
 
-.img-block:nth-child(even) {
+.img-block:nth-child(odd) {
   background: linear-gradient(to bottom, #3333ff, #ccccff, white, white);
   flex-direction: row-reverse;
   padding-left: 20px;
@@ -643,6 +930,8 @@ figcaption {
   text-align: center;
 }
 
+
+
 /* Images list for Home/Index.cshtml */
 .i-l {
   text-decoration: none;
@@ -653,15 +942,14 @@ figcaption {
   overflow: hidden;
   height: 250px;
   width: 100%;
-  margin-bottom: 10px;
 }
 
 .i-w img {
   display: block;
-  width: 40vw;
   height: 100%;
-  object-fit: cover;
-  transition: opacity 0.5s ease;
+  width: 70vw;
+  object-fit: contain cover;
+  transition: opacity 2s ease;
   opacity: 0;
 }
 
@@ -675,9 +963,9 @@ figcaption {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 1);
   z-index: 1;
-  transition: opacity 0.5s ease; /* Smooth transition for overlay */
+  transition: opacity 2s ease;
 }
 
 .ol {
@@ -686,12 +974,17 @@ figcaption {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.7));
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.7)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 2s ease;
   z-index: 2;
 }
 
@@ -700,7 +993,7 @@ figcaption {
   font-size: 1.2rem;
   text-align: center;
   padding: 0 10px;
-  transition: opacity 0.5s ease; /* Smooth transition for text */
+  transition: opacity 2s ease;
 }
 
 .i-w:hover .white-overlay {
@@ -708,9 +1001,13 @@ figcaption {
 }
 
 .i-w:hover .o-t {
-  opacity: 0; /* Fade out text on hover */
+  opacity: 0;
 }
 
 .m-t-v {
-  margin-top: -500px;
+  margin-top: -40vh;
+}
+
+.i-w:hover .ol {
+  opacity: 0;
 }

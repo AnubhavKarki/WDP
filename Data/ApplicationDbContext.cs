@@ -12,5 +12,5 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<WDP2024Assignment2.Models.AIImage> AIImage { get; set; } = default!;
-    public DbSet<UserLike> UserLikes { get; set; } // Add this line
+    public DbSet<UserLike> UserLikes { get; set; } 
 }

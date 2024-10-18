@@ -12,14 +12,14 @@
 
         <div class="overlay"></div>
         <div class="content">
-            <h1>Generative Artificial Intelligence</h1>
-            <p>Generative artificial intelligence is artificial intelligence capable of generating text, images,
+            <h1 class='rs-h1'>Generative Artificial Intelligence</h1>
+            <p class='rs-p'>Generative artificial intelligence is artificial intelligence capable of generating text, images,
                 videos, or
                 other data using generative models, often in response to prompts. Generative AI models learn the
                 patterns and
                 structure of their input training data and then generate new data that has similar characteristics.
             </p>
-            <p><em>Wikipedia</em></p>
+            <p class='rs-p'><em>Wikipedia</em></p>
         </div>
     </div>
 </div>
@@ -117,15 +117,15 @@
             <p class="upload-text">
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <i><a href="@Url.Action("Create", "AIImages")" class="link-style">Click here to upload a new AI
-                            image</a>.</i>
+                        <i><a href="@Url.Action("Create", "AIImages")" class="link-style">Click here to upload a new AI
+                                image</a>.</i>
                 }
                 else
                 {
-                    <i>Please <a asp-area="Identity" asp-page="/Account/Login" class="link-style">login</a> or
-                        <a asp-area="Identity" asp-page="/Account/Register" class="link-style">register</a> to upload
-                        your AI images.
-                    </i>
+                        <i>Please <a asp-area="Identity" asp-page="/Account/Login" class="link-style">login</a> or
+                            <a asp-area="Identity" asp-page="/Account/Register" class="link-style">register</a> to upload
+                            your AI images.
+                        </i>
                 }
             </p>
         </div>
@@ -133,28 +133,23 @@
 </div>
 
 <!-- Display Uploaded AI Images -->
-<div class="container-fluid p-0 m-t-v">
+<div class="container-fluid p-0">
     <div class="image-background-container">
         <div class="row"> 
             @foreach (var image in Model)
             {
-                <div class="col-6 col-md-4 col-lg-2">
-                    <a href="@Url.Action("Index", "AIImages")#image-@image.Id" class="i-l"> <!-- Use anchor link -->
-                        <div class="i-w">
-                            <img src="~/uploads/@image.Filename" alt="@image.Prompt" class="img-fluid" />
-                            <div class="white-overlay"></div>
-                            <div class="ol">
-                                <div class="o-t">@image.Prompt</div>
+                    <div class="col-6 col-md-4 col-lg-2 mb-2">
+                        <a href="@Url.Action("Index", "AIImages")#image-@image.Id" class="i-l">
+                            <div class="i-w">
+                                <img src="~/uploads/@image.Filename" alt="@image.Prompt" class="img-fluid" />
+                                <div class="white-overlay"></div>
+                                <div class="ol">
+                                    <div class="o-t">@image.ImageGenerator</div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
             }
         </div>
     </div>
 </div>
-
-
-
-@* Javascript *@
-<script src="~/js/site.js"></script>

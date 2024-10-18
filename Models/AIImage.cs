@@ -31,6 +31,6 @@ namespace WDP2024Assignment2.Models
         [Key]
         public int Id { get; set; }
         public int AIImageId { get; set; }
-        public string UserId { get; set; } // Assuming you're using ASP.NET Identity
+        public string UserId { get; set; } 
     }
 }

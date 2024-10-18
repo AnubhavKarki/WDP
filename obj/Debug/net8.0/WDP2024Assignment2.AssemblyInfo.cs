@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WDP2024Assignment2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d690b6a88a4de790ae4874bcbf9c20ceb36eb162")]
 [assembly: System.Reflection.AssemblyProductAttribute("WDP2024Assignment2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WDP2024Assignment2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
